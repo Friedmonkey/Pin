@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pin", "Pin\Pin.csproj", "{B340177A-4C95-4579-8D00-3C69E69EFC77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B340177A-4C95-4579-8D00-3C69E69EFC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B340177A-4C95-4579-8D00-3C69E69EFC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B340177A-4C95-4579-8D00-3C69E69EFC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B340177A-4C95-4579-8D00-3C69E69EFC77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34B2D6FF-59EB-4A77-B857-DAFF6BC2BB9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34B2D6FF-59EB-4A77-B857-DAFF6BC2BB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34B2D6FF-59EB-4A77-B857-DAFF6BC2BB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34B2D6FF-59EB-4A77-B857-DAFF6BC2BB9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFCD1B3A-9DFC-4452-B4D1-E9C46CF04C6D}
+	EndGlobalSection
+EndGlobal
