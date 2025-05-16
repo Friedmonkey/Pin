@@ -51,8 +51,11 @@ namespace FriedMonkey
         private Color BorderColor = Color.Transparent;
         private int BorderWidth = 1;
 
-        private const int GWL_EXSTYLE = -20; //the style
+        private const int GWL_STYLE = -16; // The normal style
+        private const int GWL_EXSTYLE = -20; //the extended style
 
+        private const uint WS_POPUP = 0x80000000; // Creates a pop-up window
+        private const int WS_EX_TOPMOST = 0x00000008;
         private const int WS_EX_LAYERED = 0x80000; //allow it to have layers
         public const int LWA_ALPHA = 0x2; //make it invisible
         private const int WS_EX_TRANSPARENT = 0x20; //make it clicktrough
@@ -136,15 +139,16 @@ namespace FriedMonkey
             base.TransparencyKey = color;
         }
 
-        private void ChangeTransparencyType() 
+        private void ChangeTransparencyType()
         {
             //this.BackColor = Color.White;
             //this.TransparencyKey = Color.Empty;
 
             IntPtr hWnd = this.Handle;
             uint origionalStyle = GetWindowLong(hWnd, GWL_EXSTYLE);
-            SetWindowLong(hWnd, GWL_EXSTYLE, origionalStyle | WS_EX_LAYERED | WS_EX_TRANSPARENT);
-            SetLayeredWindowAttributes(hWnd, 0xFF00FF, 128, LWA_ALPHA);
+            SetWindowLong(hWnd, GWL_EXSTYLE, origionalStyle | WS_EX_TOPMOST | WS_EX_LAYERED);
+            //SetWindowLong(hWnd, GWL_STYLE, WS_POPUP);
+            SetLayeredWindowAttributes(hWnd, 0xFF00FF, 128, LWA_COLORKEY);
         }
 
 
@@ -300,6 +304,17 @@ namespace FriedMonkey
                 }
             }
         }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                var Params = base.CreateParams;
+                Params.ExStyle |= 0x80;
+                return Params;
+            }
+        }
+
         private async void Form1_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < Screen.AllScreens.Length; i++)
